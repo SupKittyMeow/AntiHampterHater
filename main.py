@@ -7,6 +7,10 @@ intents.message_content = True
 
 bot = commands.Bot(command_prefix='/', intents=intents)
 
+@bot.command()
+async def getuser(ctx, role: discord.Role):
+    await ctx.send("\n".join(str(member) for member in role.members)
+                   
 @bot.event
 async def on_ready():
     print(f'Ready and logged in on {bot.user}')
