@@ -14,6 +14,7 @@ async def getuser(ctx, role: discord.Role):
 @bot.event
 async def on_ready():
     print(f'Ready and logged in on {bot.user}')
+    await bot.process_commands()
 
 @bot.event
 async def on_member_update(before, after):
